@@ -1,0 +1,21 @@
+# Нууц тохиргоо
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Python түр файлууд
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+env/
+*.log
+
+# Засварлагч, систем
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
