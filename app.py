@@ -18,7 +18,8 @@ SUPABASE_SECRET_KEY = os.environ["SUPABASE_SECRET_KEY"]
 MN_TZ = timezone(timedelta(hours=8))
 
 app = Flask(__name__)
-app.secret_key = secrets.token_hex(32)
+# Серверт SECRET_KEY заавал тохируулна. Үгүй бол gunicorn-ы процесс бүр өөр түлхүүртэй болж, нэвтрэлт санамсаргүй алдагдана.
+app.secret_key = os.environ.get("SECRET_KEY") or secrets.token_hex(32)
 app.config["SESSION_COOKIE_SAMESITE"] = "Lax"
 
 PLATFORM_NAMES = {
